@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { TabsPage } from '../pages/tabs/tabs';
 import { HomePage } from '../pages/home/home';
+import { TutorialPage } from '../pages/tutorial/tutorial';
 
 import { NotificationProvider } from '../providers/notification.service';
 
@@ -12,7 +13,7 @@ import { NotificationProvider } from '../providers/notification.service';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = TabsPage;
+  rootPage:any = TutorialPage;
 
   @ViewChild(Nav) nav: Nav;
   pages: Array<{title: string, component: any}>;

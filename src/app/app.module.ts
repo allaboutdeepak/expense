@@ -16,6 +16,7 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import { TutorialPage } from '../pages/tutorial/tutorial';
 /* pages ends*/
 import { AddItemComponent } from '../components/add-item/add-item';
 /* component ends*/
@@ -28,7 +29,7 @@ import { NotificationProvider } from '../providers/notification.service';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage,PersonalPage,GroupsPage,ReportPage,EarningPage,
+    TabsPage,PersonalPage,GroupsPage,ReportPage,EarningPage,TutorialPage,
     AddItemComponent
   ],
   imports: [
@@ -41,7 +42,7 @@ import { NotificationProvider } from '../providers/notification.service';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage,PersonalPage,GroupsPage,ReportPage,EarningPage,
+    TabsPage,PersonalPage,GroupsPage,ReportPage,EarningPage,TutorialPage,
     AddItemComponent
   ],
   providers: [

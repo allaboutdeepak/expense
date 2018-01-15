@@ -1,0 +1,43 @@
+<ion-header no-border>
+  <ion-navbar>
+    <ion-buttons end *ngIf="showSkip">
+      <button ion-button (click)="startApp()" color="primary">Skip</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content no-bounce>
+  <ion-slides #slides (ionSlideWillChange)="onSlideChangeStart($event)" pager>
+
+    <ion-slide>
+      <img src="assets/img/ica-slidebox-img-1.png" class="slide-image"/>
+      <h2 class="slide-title">
+        Welcome to <b>{{applicationName}}</b>
+      </h2>
+      <p *ngIf="toturialSlide">
+          <b>{{applicationName}}</b> {{toturialSlide.first}}
+         </p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="assets/img/ica-slidebox-img-2.png" class="slide-image"/>
+      <h2 class="slide-title" >How does is work?</h2>
+      <p>We personalize all the especially for your work!</p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="assets/img/ica-slidebox-img-3.png" class="slide-image"/>
+      <h2 class="slide-title">Why is it special?</h2>
+      <p>You get relevant <b>test content</b> that helps you grow,</p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="assets/img/ica-slidebox-img-4.png" class="slide-image"/>
+      <h2 class="slide-title">Ready to {{applicationName}} forward?</h2>
+      <button ion-button icon-end large clear (click)="startApp()">
+        Continue
+        <ion-icon name="arrow-forward"></ion-icon>
+      </button>
+    </ion-slide>
+
+  </ion-slides>
+</ion-content>

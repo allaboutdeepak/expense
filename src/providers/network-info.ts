@@ -16,22 +16,22 @@ export class NetworkInfoProvider {
 		 public platform: Platform
 		) {
 			platform.ready().then(() => {
-				if (this.platform.is('mobileweb')) {
-					this.currentPlatform='mobileweb';
-							console.log("running in a browser on mobile desktop!");
-				}else if (this.platform.is('mobile') && this.platform.is('android')) {
-						console.log("running on Android device!");
-						this.currentPlatform='android';
-				}else if (this.platform.is('mobile') && this.platform.is('ios')) {
-							console.log("running on iOS device!");
-							this.currentPlatform='ios';
-				}else if (this.platform.is('mobile') && this.platform.is('windows')) {
-							console.log("running on windows device!");
-							this.currentPlatform='windows';
+			if (this.platform.is('mobileweb')) {
+			this.currentPlatform='mobileweb';
+				console.log("running in a browser on mobile desktop!");
+			}else if (this.platform.is('mobile') && this.platform.is('android')) {
+				console.log("running on Android device!");
+			this.currentPlatform='android';
+			}else if (this.platform.is('mobile') && this.platform.is('ios')) {
+				console.log("running on iOS device!");
+			this.currentPlatform='ios';
+			}else if (this.platform.is('mobile') && this.platform.is('windows')) {
+				console.log("running on windows device!");
+			this.currentPlatform='windows';
 			}else{
-							console.log('unknown device');
-							this.currentPlatform='unknown';
-				}
+				console.log('unknown device');
+			this.currentPlatform='unknown';
+			}
 			});
  		 }
 
