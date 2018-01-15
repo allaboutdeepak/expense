@@ -6,6 +6,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { TabsPage } from '../pages/tabs/tabs';
 import { HomePage } from '../pages/home/home';
 
+import { NotificationProvider } from '../providers/notification.service';
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -15,7 +17,11 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform,
+     public statusBar: StatusBar,
+     public splashScreen: SplashScreen,
+     private notification: NotificationProvider
+    ) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -32,6 +38,7 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      this.notification.pushInit();
     });
   }
 

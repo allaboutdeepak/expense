@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "182972841011",
+    "firebase_url": "https://cybershock-bd98a.firebaseio.com",
+    "project_id": "cybershock-bd98a",
+    "storage_bucket": "cybershock-bd98a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:182972841011:android:9487f896c3f7da45",
+        "android_client_info": {
+          "package_name": "com.cybershock.expense"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "182972841011-eeqekeoq10b8b1fm7ebf8fhr94c7ve4t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cybershock.expense",
+            "certificate_hash": "21116a4fe80aca705a7592efd2a4cf6e57b67f90"
+          }
+        },
+        {
+          "client_id": "182972841011-oqqdkv1b3snhrncfgdh59pljniot298l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcxYL4wQknh7oQ2wksX-POQcLoD8_4iGI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "182972841011-oqqdkv1b3snhrncfgdh59pljniot298l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
