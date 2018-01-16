@@ -20,6 +20,7 @@ import { TutorialPage } from '../pages/tutorial/tutorial';
 /* pages ends*/
 import { AddItemComponent } from '../components/add-item/add-item';
 import { AddGroupMemberComponent } from '../components/add-group-member/add-group-member';
+import { GroupsComponent } from '../components/groups/groups';
 /* component ends*/
 import { NetworkInfoProvider } from '../providers/network-info';
 import { NotificationProvider } from '../providers/notification.service';
@@ -31,7 +32,7 @@ import { NotificationProvider } from '../providers/notification.service';
     ContactPage,
     HomePage,
     TabsPage,PersonalPage,GroupsPage,ReportPage,EarningPage,TutorialPage,
-    AddItemComponent,AddGroupMemberComponent
+    AddItemComponent,AddGroupMemberComponent,GroupsComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +45,7 @@ import { NotificationProvider } from '../providers/notification.service';
     ContactPage,
     HomePage,
     TabsPage,PersonalPage,GroupsPage,ReportPage,EarningPage,TutorialPage,
-    AddItemComponent,AddGroupMemberComponent
+    AddItemComponent,AddGroupMemberComponent,GroupsComponent
   ],
   providers: [
     StatusBar,

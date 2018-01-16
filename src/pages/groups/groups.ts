@@ -13,12 +13,13 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'groups.html',
 })
 export class GroupsPage {
-
+  show=0;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-
   ionViewDidLoad() {
     console.log('ionViewDidLoad GroupsPage');
   }
-
+  openItem(val){
+    this.show=val;
+  }
 }

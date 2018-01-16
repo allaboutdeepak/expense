@@ -13,7 +13,7 @@ import { NavController, NavParams,Refresher } from 'ionic-angular';
   templateUrl: 'personal.html',
 })
 export class PersonalPage {
-
+  show=0;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -23,5 +23,8 @@ export class PersonalPage {
   doRefresh(refresher: Refresher){
     console.log('success',refresher);
     refresher.complete();
+  }
+  openItem(val){
+    this.show=val;
   }
 }

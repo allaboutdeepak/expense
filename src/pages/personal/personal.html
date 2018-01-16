@@ -22,16 +22,17 @@
 </ion-header>
 
 <ion-content padding>
-
-  <!--<add-item></add-item>-->
-  <!--
+<div *ngIf="show===0">
   <p>Nothing here!</p>
   <p>Add you content</p>
   <ion-fab bottom right>
       <button ion-fab color="primary"><ion-icon name="add"></ion-icon></button>
   </ion-fab>
--->
-<!--<ion-list>
+</div>
+
+<add-item *ngIf="show===1"></add-item>
+  
+<ion-list *ngIf="show===2">
     <ion-item>
       Item
     </ion-item>
@@ -57,19 +58,20 @@
       Multiline text that should wrap when it is too long
       to fit on one line in the item.
     </ion-item>
-  </ion-list>-->
+  </ion-list>
 
-  <ion-footer no-border style="background: #e2e2e2;text-align: center;">
-      <ion-grid>
-        <ion-row>
-          <ion-col><ion-icon name="add"></ion-icon>Add </ion-col>
-          <ion-col> <ion-icon name="contacts"></ion-icon> Total </ion-col>
-          <ion-col><ion-icon name="document"></ion-icon> Sattle </ion-col>
-          <ion-col><ion-icon name="logo-usd"></ion-icon> FAQ </ion-col>
-        </ion-row>
-      </ion-grid>
-  </ion-footer>
+
   <!--<ion-refresher (ionRefresh)="doRefresh($event)">
       <ion-refresher-content></ion-refresher-content>
     </ion-refresher>-->
 </ion-content>
+<ion-footer no-border style="background: #e2e2e2;text-align: center;">
+    <ion-grid>
+      <ion-row>
+        <ion-col (click)="openItem(1)"><ion-icon name="add"></ion-icon>Add </ion-col>
+        <ion-col (click)="openItem(2)"> <ion-icon name="contacts"></ion-icon> Total </ion-col>
+        <ion-col (click)="openItem(3)"><ion-icon name="document"></ion-icon> Sattle </ion-col>
+        <ion-col (click)="openItem(4)"><ion-icon name="logo-usd"></ion-icon> FAQ </ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-footer>
