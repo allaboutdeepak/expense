@@ -1,0 +1,28 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Verify your phone number</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding>
+  App will send an SMS to veryfy your phone number.
+  Enter your country code and phone number
+<ion-list>
+  <ion-item>
+     <ion-select  name="amount" placeholder="Select Members">
+       <ion-option value="in">India</ion-option>
+       <ion-option value="us">USA</ion-option>
+       <ion-option value="np">Nepal</ion-option>
+     </ion-select>
+   </ion-item>
+   <ion-item>
+      <ion-input style="width:80px;" item-start  name="item" type="text" placeholder="+91"> </ion-input>
+      <ion-input item-end  name="name" type="text" placeholder="phone number"> </ion-input>
+  </ion-item>
+  <ion-item class="pl-0 btn-sm">
+      <button ion-button class="btn submit-btn fs-16" full type="submit">Next</button>
+  </ion-item>
+  <p class="text-center">Carrier SMS charges may apply</p>
+  </ion-list>
+</ion-content>

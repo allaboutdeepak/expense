@@ -17,6 +17,7 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { TutorialPage } from '../pages/tutorial/tutorial';
+import { VerifyContactPage } from '../pages/verify-contact/verify-contact';
 /* pages ends*/
 import { AddItemComponent } from '../components/add-item/add-item';
 import { AddGroupMemberComponent } from '../components/add-group-member/add-group-member';
@@ -31,7 +32,7 @@ import { NotificationProvider } from '../providers/notification.service';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage,PersonalPage,GroupsPage,ReportPage,EarningPage,TutorialPage,
+    TabsPage,PersonalPage,GroupsPage,ReportPage,EarningPage,TutorialPage,VerifyContactPage,
     AddItemComponent,AddGroupMemberComponent,GroupsComponent
   ],
   imports: [
@@ -44,7 +45,7 @@ import { NotificationProvider } from '../providers/notification.service';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage,PersonalPage,GroupsPage,ReportPage,EarningPage,TutorialPage,
+    TabsPage,PersonalPage,GroupsPage,ReportPage,EarningPage,TutorialPage,VerifyContactPage,
     AddItemComponent,AddGroupMemberComponent,GroupsComponent
   ],
   providers: [
