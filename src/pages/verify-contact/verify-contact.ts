@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { NavController, NavParams } from 'ionic-angular';
+import { TabsPage } from '../tabs/tabs';
 /**
  * Generated class for the VerifyContactPage page.
  *
@@ -8,7 +8,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-verify-contact',
   templateUrl: 'verify-contact.html',
@@ -22,4 +21,9 @@ export class VerifyContactPage {
     console.log('ionViewDidLoad VerifyContactPage');
   }
 
+  startApp(){
+    this.navCtrl.setRoot(TabsPage).catch((err: any) => {
+      console.log(`Didn't set nav root: ${err}`);
+    });
+  }
 }

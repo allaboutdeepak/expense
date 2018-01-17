@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { MenuController, NavController, Slides } from 'ionic-angular';
-import { TabsPage } from '../tabs/tabs';
+import { VerifyContactPage } from '../verify-contact/verify-contact';
 @Component({
   selector: 'page-tutorial',
   templateUrl: 'tutorial.html'
@@ -19,7 +19,7 @@ export class TutorialPage {
 
   
   startApp(){
-    this.navCtrl.setRoot(TabsPage).catch((err: any) => {
+    this.navCtrl.setRoot(VerifyContactPage).catch((err: any) => {
       console.log(`Didn't set nav root: ${err}`);
     });
   }
