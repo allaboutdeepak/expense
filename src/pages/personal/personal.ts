@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams,Refresher } from 'ionic-angular';
-
+import { AnalyticsProvider } from '../../providers/google-analytics';
+import { SocialSharing } from '@ionic-native/social-sharing';
+import { LocalNotifications } from '@ionic-native/local-notifications';
 /**
  * Generated class for the PersonalPage page.
  *
@@ -12,13 +14,63 @@ import { NavController, NavParams,Refresher } from 'ionic-angular';
   selector: 'page-personal',
   templateUrl: 'personal.html',
 })
+
+
+
 export class PersonalPage {
   show=0;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  toUser : {toUserId: string, toUserName: string};
+  constructor(public navCtrl: NavController,
+   public navParams: NavParams, public analytics:AnalyticsProvider,
+   private socialSharing: SocialSharing,
+   private localNotification: LocalNotifications) {
+   this.toUser = {
+      toUserId:'210000198410281948',
+      toUserName:'Hancock'
+    }
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PersonalPage');
+    this.analytics.googleAnalyticsTrack('PersonalPage','PersonalPage');
+
+    this.localNotification.hasPermission().then(
+      (permission) => {
+        if (permission === true) {
+    
+          this.localNotification.schedule({
+            title: 'The Big Meeting',
+            text: '4:15 - 5:15 PM\nBig Conference Room',
+            smallIcon: 'res://calendar',
+            icon: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzfXKe6Yfjr6rCtR6cMPJB8CqMAYWECDtDqH-eMnerHHuXv9egrw'
+          });
+          
+         let notification= this.localNotification.schedule([
+            { id: 1, title: 'My first notification' },
+            { id: 2, title: 'My second notification' }
+           ])
+
+           this.localNotification.on('click', (event, notification, state) => {     
+            console.log('click',event);
+            console.log(notification);
+            console.log(state);
+          });
+
+          this.localNotification.on('clear', (event, notification, state) => {     
+            console.log('clear',event);
+            console.log(notification);
+            console.log(state);
+          });
+
+          this.localNotification.on('cancel', (event, notification, state) => {     
+            console.log('cancel',event);
+            console.log(notification);
+            console.log(state);
+          });
+           
+        }
+      }
+    );
   }
   doRefresh(refresher: Refresher){
     console.log('success',refresher);
@@ -27,4 +79,42 @@ export class PersonalPage {
   openItem(val){
     this.show=val;
   }
+  shareViaWhatsApp(){
+    // Check if sharing via email is supported
+      this.socialSharing.shareViaWhatsApp('this simple message').then(() => {
+       
+          console.log('success shard');
+      }).catch(() => {
+        // Sharing via email is not possible
+      });
+  }
+
+  shareViaFacebook(){
+    // Check if sharing via email is supported
+      this.socialSharing.shareViaFacebook('this simple message').then(() => {
+       
+          console.log('success shard');
+      }).catch(() => {
+        // Sharing via email is not possible
+      });
+  }
+
+  shareViaInstagram(){
+    // Check if sharing via email is supported
+      this.socialSharing.shareViaInstagram('this simple message','image').then(() => {
+       
+          console.log('success shard');
+      }).catch(() => {
+        // Sharing via email is not possible
+      });
+  }
+  shareViaSMS(){
+    this.socialSharing.shareViaInstagram('this simple message','9990618147').then(() => {
+       
+      console.log('success shard');
+  }).catch(() => {
+    // Sharing via email is not possible
+  }); 
+  }
+  
 }

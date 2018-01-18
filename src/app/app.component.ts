@@ -8,7 +8,7 @@ import { HomePage } from '../pages/home/home';
 import { TutorialPage } from '../pages/tutorial/tutorial';
 
 import { NotificationProvider } from '../providers/notification.service';
-
+import { AnalyticsProvider } from '../providers/google-analytics';
 @Component({
   templateUrl: 'app.html'
 })
@@ -21,7 +21,8 @@ export class MyApp {
   constructor(public platform: Platform,
      public statusBar: StatusBar,
      public splashScreen: SplashScreen,
-     private notification: NotificationProvider
+     private notification: NotificationProvider,
+     private analytics:AnalyticsProvider
     ) {
     this.initializeApp();
 
@@ -40,6 +41,7 @@ export class MyApp {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
       this.notification.pushInit();
+      this.analytics.googleAnalyticsTrack('TutorialPage','launch');
     });
   }
 
@@ -48,4 +50,6 @@ export class MyApp {
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
   }
+
+
 }

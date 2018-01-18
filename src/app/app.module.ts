@@ -4,9 +4,13 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { Network } from '@ionic-native/network';
+//import { Network } from '@ionic-native/network';
 import { Push } from '@ionic-native/push';
 import { Device } from '@ionic-native/device'
+import { HttpClientModule } from "@angular/common/http";
+import { GoogleAnalytics } from '@ionic-native/google-analytics';
+import { SocialSharing } from '@ionic-native/social-sharing';
+import { LocalNotifications } from '@ionic-native/local-notifications';
 /* native ends */
 import { PersonalPage } from '../pages/personal/personal';
 import { GroupsPage } from '../pages/groups/groups';
@@ -25,7 +29,10 @@ import { GroupsComponent } from '../components/groups/groups';
 /* component ends*/
 import { NetworkInfoProvider } from '../providers/network-info';
 import { NotificationProvider } from '../providers/notification.service';
+import { EmojiProvider } from '../providers/emoji';
+import { AnalyticsProvider } from '../providers/google-analytics';
 /* providers ends*/
+
 @NgModule({
   declarations: [
     MyApp,
@@ -37,7 +44,13 @@ import { NotificationProvider } from '../providers/notification.service';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    HttpClientModule,
+    //IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp,{
+      tabsHideOnSubPages:true,
+      tabsLayout:'icon-left',
+      preloadModules: true
+    }),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -51,8 +64,13 @@ import { NotificationProvider } from '../providers/notification.service';
   providers: [
     StatusBar,
     SplashScreen,
+    GoogleAnalytics,
     NetworkInfoProvider,NotificationProvider,Push,Device,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    EmojiProvider,
+    AnalyticsProvider,
+    SocialSharing,
+    LocalNotifications
   ]
 })
 export class AppModule {}

@@ -22,6 +22,11 @@
 </ion-header>
 
 <ion-content padding>
+
+<div (click)="shareViaWhatsApp()"><ion-icon name="add"></ion-icon> Share via whats app</div>
+<div (click)="shareViaFacebook()"><ion-icon name="add"></ion-icon> Share via facebook</div>
+<div (click)="shareViaInstagram()"><ion-icon name="add"></ion-icon> Share via Instagram</div>
+<div (click)="shareViaSMS()"><ion-icon name="add"></ion-icon> share Via SMS</div>
 <div *ngIf="show===0">
   <p>Nothing here!</p>
   <p>Add you content</p>
@@ -60,6 +65,15 @@
     </ion-item>
   </ion-list>
 
+ <ion-list *ngIf="show===4">
+    <ion-item navPush="Chat" [navParams]="toUser">
+      <ion-avatar item-left>
+        <img src="./assets/to-user.jpg">
+      </ion-avatar>
+      <h2>Hancock</h2>
+      <p>If at first you don’t succeed, call it version 1.0</p>
+    </ion-item>
+  </ion-list>
 
   <!--<ion-refresher (ionRefresh)="doRefresh($event)">
       <ion-refresher-content></ion-refresher-content>
@@ -71,7 +85,7 @@
         <ion-col (click)="openItem(1)"><ion-icon name="add"></ion-icon>Add </ion-col>
         <ion-col (click)="openItem(2)"> <ion-icon name="contacts"></ion-icon> Total </ion-col>
         <ion-col (click)="openItem(3)"><ion-icon name="document"></ion-icon> Sattle </ion-col>
-        <ion-col (click)="openItem(4)"><ion-icon name="logo-usd"></ion-icon> FAQ </ion-col>
+        <ion-col (click)="openItem(4)"><ion-icon name="logo-usd"></ion-icon> Chat </ion-col>
       </ion-row>
     </ion-grid>
 </ion-footer>
