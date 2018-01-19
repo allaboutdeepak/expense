@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavParams } from 'ionic-angular';
 import { Events, Content, TextInput } from 'ionic-angular';
 import { ChatService, ChatMessage, UserInfo } from "../../providers/chat-service";
-
+import { AnalyticsProvider } from '../../providers/google-analytics';
 @IonicPage()
 @Component({
     selector: 'page-chat',
@@ -20,7 +20,7 @@ export class Chat {
 
     constructor(navParams: NavParams,
                 private chatService: ChatService,
-                private events: Events,) {
+                private events: Events, public analytics:AnalyticsProvider) {
         // Get the navParams toUserId parameter
         this.toUser = {
             id: navParams.get('toUserId'),
@@ -39,6 +39,8 @@ export class Chat {
     }
 
     ionViewDidEnter() {
+        let event={eventCategory:'Chat',eventAction:'enter',eventLabel:'Chat'+this.toUser.id,eventValue:'100',renew:true}
+        this.analytics.googleAnalyticsTrack('ChatPage',event);
         //get message list
         this.getMsg();
 

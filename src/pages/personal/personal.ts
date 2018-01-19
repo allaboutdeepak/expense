@@ -32,7 +32,8 @@ export class PersonalPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PersonalPage');
-    this.analytics.googleAnalyticsTrack('PersonalPage','PersonalPage');
+    let event={eventCategory:'Launch',eventAction:'start',eventLabel:'PersonalPage launch',eventValue:'100',renew:true}
+    this.analytics.googleAnalyticsTrack('PersonalPage',event);
 
     this.localNotification.hasPermission().then(
       (permission) => {
@@ -78,11 +79,15 @@ export class PersonalPage {
   }
   openItem(val){
     this.show=val;
+    let event={eventCategory:'Transaction',eventAction:'Show',eventLabel:'transaction-'+val,eventValue:'100',renew:true}
+    this.analytics.googleAnalyticsTrack('PersonalPage',event);
   }
   shareViaWhatsApp(){
     // Check if sharing via email is supported
       this.socialSharing.shareViaWhatsApp('this simple message').then(() => {
        
+        let event={eventCategory:'whatsapp Share',eventAction:'share',eventLabel:'share on whats app',eventValue:'100',renew:true}
+        this.analytics.googleAnalyticsTrack('PersonalPage',event);
           console.log('success shard');
       }).catch(() => {
         // Sharing via email is not possible
@@ -101,7 +106,7 @@ export class PersonalPage {
 
   shareViaInstagram(){
     // Check if sharing via email is supported
-      this.socialSharing.shareViaInstagram('this simple message','image').then(() => {
+      this.socialSharing.shareViaInstagram('this simple message','assets/user.jpg').then(() => {
        
           console.log('success shard');
       }).catch(() => {
@@ -109,7 +114,7 @@ export class PersonalPage {
       });
   }
   shareViaSMS(){
-    this.socialSharing.shareViaInstagram('this simple message','9990618147').then(() => {
+    this.socialSharing.shareViaSMS('this simple message','9990618147').then(() => {
        
       console.log('success shard');
   }).catch(() => {

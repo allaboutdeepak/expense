@@ -6,6 +6,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { TabsPage } from '../pages/tabs/tabs';
 import { HomePage } from '../pages/home/home';
 import { TutorialPage } from '../pages/tutorial/tutorial';
+import { ReferralPage } from '../pages/referral/referral';
 
 import { NotificationProvider } from '../providers/notification.service';
 import { AnalyticsProvider } from '../providers/google-analytics';
@@ -29,7 +30,8 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
-      { title: 'List', component: TabsPage }
+      { title: 'List', component: TabsPage },
+      { title: 'Refer', component: ReferralPage }
     ];
 
   }
@@ -41,7 +43,8 @@ export class MyApp {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
       this.notification.pushInit();
-      this.analytics.googleAnalyticsTrack('TutorialPage','launch');
+      let event={eventCategory:'Launch',eventAction:'start',eventLabel:'app launch',eventValue:'100',renew:true}
+      this.analytics.googleAnalyticsTrack('TutorialPage',event);
     });
   }
 

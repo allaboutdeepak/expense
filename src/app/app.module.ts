@@ -22,6 +22,7 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { TutorialPage } from '../pages/tutorial/tutorial';
 import { VerifyContactPage } from '../pages/verify-contact/verify-contact';
+import { ReferralPage } from '../pages/referral/referral';
 /* pages ends*/
 import { AddItemComponent } from '../components/add-item/add-item';
 import { AddGroupMemberComponent } from '../components/add-group-member/add-group-member';
@@ -39,7 +40,7 @@ import { AnalyticsProvider } from '../providers/google-analytics';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage,PersonalPage,GroupsPage,ReportPage,EarningPage,TutorialPage,VerifyContactPage,
+    TabsPage,PersonalPage,GroupsPage,ReportPage,EarningPage,TutorialPage,VerifyContactPage,ReferralPage,
     AddItemComponent,AddGroupMemberComponent,GroupsComponent
   ],
   imports: [
@@ -58,7 +59,7 @@ import { AnalyticsProvider } from '../providers/google-analytics';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage,PersonalPage,GroupsPage,ReportPage,EarningPage,TutorialPage,VerifyContactPage,
+    TabsPage,PersonalPage,GroupsPage,ReportPage,EarningPage,TutorialPage,VerifyContactPage,ReferralPage,
     AddItemComponent,AddGroupMemberComponent,GroupsComponent
   ],
   providers: [
