@@ -11,6 +11,8 @@ import { HttpClientModule } from "@angular/common/http";
 import { GoogleAnalytics } from '@ionic-native/google-analytics';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { LocalNotifications } from '@ionic-native/local-notifications';
+import { CacheModule } from 'ionic-cache';
+import { HttpModule } from '@angular/http';
 /* native ends */
 import { PersonalPage } from '../pages/personal/personal';
 import { GroupsPage } from '../pages/groups/groups';
@@ -46,12 +48,15 @@ import { AnalyticsProvider } from '../providers/google-analytics';
   imports: [
     BrowserModule,
     HttpClientModule,
+    HttpModule,
     //IonicModule.forRoot(MyApp)
     IonicModule.forRoot(MyApp,{
       tabsHideOnSubPages:true,
       tabsLayout:'icon-left',
-      preloadModules: true
+      preloadModules: true,
+      clickBlock: false
     }),
+    CacheModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
